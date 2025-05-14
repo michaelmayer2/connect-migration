@@ -30,7 +30,7 @@ relevant_content <- content_list_by_tag(connect, my_tag_id)
 # relevant_content <- get_content(connect, owner_guid = my_guid)
 
 selected_content <- relevant_content[, c("guid","name","title")]
-# selected_content$owner <- "mm2"
+selected_content$owner <- NA
 
 # save data in csv file so that ownership can be added
 write.csv(selected_content, file = "relevant_content.csv")
