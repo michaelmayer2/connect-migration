@@ -24,13 +24,13 @@ cat("Selected tag ID:", my_tag_id, "\n")
 relevant_content <- content_list_by_tag(connect, my_tag_id)
 
 # For testing purposes, I select content based on publisher
-users <- get_users(connect)
-my_guid <- users[users$username == "michael.mayer@posit.co", ]$guid
+# users <- get_users(connect)
+# my_guid <- users[users$username == "michael.mayer@posit.co", ]$guid
 
-relevant_content <- get_content(connect, owner_guid = my_guid)
+# relevant_content <- get_content(connect, owner_guid = my_guid)
 
 selected_content <- relevant_content[, c("guid","name","title")]
-selected_content$owner <- "mm2"
+# selected_content$owner <- "mm2"
 
 # save data in csv file so that ownership can be added
 write.csv(selected_content, file = "relevant_content.csv")
